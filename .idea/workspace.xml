@@ -1,20 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee4588e3-e6de-40b9-b867-0a3191713d42" name="Changes" comment="" />
+    <list default="true" id="ee4588e3-e6de-40b9-b867-0a3191713d42" name="Changes" comment="Присоединение к Гиту">
+      <change afterPath="$PROJECT_DIR$/speed_reading/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/data/level_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/data/level_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/favicon_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/fullscreen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/nofullscreen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/img/speed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/static/interactive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/reading_trainer/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/speed_reading/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/speed_reading/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/speed_reading/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/speed_reading/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/speed_reading/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/templates/trainer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/templates/trainer_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/speed_reading/templates/trainer_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SpeedReading.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SpeedReading.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2pOMKFzO2LCDm8zavk6MgHdfstY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.Go.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Python/SpeedReading/speed_reading/manage.py&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\SpeedReading\speed_reading\reading_trainer\static" />
+      <recent name="D:\Python\SpeedReading\speed_reading\reading_trainer\Img" />
+      <recent name="D:\Python\SpeedReading\speed_reading\reading_trainer" />
+      <recent name="D:\Python\SpeedReading\speed_reading" />
+      <recent name="D:\Python\SpeedReading" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Go" type="PythonConfigurationType" factoryName="Python">
+      <module name="SpeedReading" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (SpeedReading)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/speed_reading/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -32,6 +131,20 @@
       <option name="presentableId" value="Default" />
       <updated>1732632602937</updated>
     </task>
+    <task id="LOCAL-00001" summary="Присоединение к Гиту">
+      <option name="closed" value="true" />
+      <created>1732632915229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732632915229</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Присоединение к Гиту" />
+    <option name="LAST_COMMIT_MESSAGE" value="Присоединение к Гиту" />
   </component>
 </project>

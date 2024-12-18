@@ -1,0 +1,312 @@
+/* Основные стили для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 5px;
+    background: #e0e0e0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Контейнер для всего контента */
+.container {
+    position: relative;
+    height: auto; /* Позволяет контейнеру расширяться вниз */
+    overflow: visible;
+    width: 100%;
+    max-width: 800px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px #bebebe, -8px -8px 15px #ffffff;
+    padding: 20px;
+}
+
+.row justify-content-center {
+    position: relative;
+    overflow: visible;
+}
+
+.col-lg-8 col-md-10 {
+    position: relative;
+    overflow: visible;
+}
+
+/* Заголовки */
+h1, h3 {
+    text-align: center;
+    color: #4a4a4a;
+    text-shadow: 1px 1px 2px #d0d0d0;
+}
+
+.accordion {
+    position: relative;
+    overflow: visible;
+}
+
+.accordion-item {
+    position: relative; /* Удерживаем каждый элемент на месте */
+    margin-bottom: 15px;
+    overflow: visible;
+    transition: margin 0.3s ease-out; /* Плавное изменение отступов */
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+}
+
+.accordion-header {
+    position: relative; /* Заголовок будет оставаться на месте */
+    padding: 2px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 0px;
+    top: 0; /* Фиксируем к верхней части блока */
+    z-index: 10; /* Убедитесь, что он будет над содержимым */
+    background: #e0e0e0; /* Добавляем фон для заголовка */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень для выделения */
+    transition: background 0.3s ease; /* Плавное изменение фона */
+    cursor: pointer;
+}
+
+.accordion-header:hover {
+    background: #d6d6d6; /* Меняем фон при наведении для удобства */
+}
+
+.accordion-button.collapsed .accordion-icon {
+    transform: rotate(180deg); /* Поворот галочки при закрытии */
+}
+
+.accordion-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.accordion-collapse.show {}
+
+.accordion-button {
+    display: flex;
+    justify-content: flex-start; /* Содержание заголовка слева */
+    align-items: center; /* Центрируем элементы по вертикали */
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-size: 20px;
+    color: #333;
+    padding: 5px;
+}
+
+.accordion-button:focus {
+    outline: none;
+}
+
+.accordion-body {
+    padding: 15px;
+}
+
+.accordion-icon {
+    position: absolute; /* Абсолютное позиционирование */
+    right: 25px; /* Располагаем иконку в правом углу */
+    width: 35px;
+    height: 20px;
+    transition: transform 0.4s ease;
+}
+
+/* Стили для текста */
+#word {
+    background: #e0e0e0;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.speedButton {
+    width: 100%; /* Адаптация к ширине экрана */
+    max-width: 800px; /* Ограничение ширины */
+    margin: 0 auto; /* Центрирование блока */
+    display: flex;
+    flex-direction: column; /* Ставим элементы в колонку для компактности */
+    gap: 15px; /* Пробелы между элементами */
+    box-sizing: border-box;
+}
+
+/* Стили для кнопок */
+button {
+    background: #e0e0e0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+button:active {
+    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+}
+
+.speedButton {
+    display: flex;
+    gap: 15px; /* Отступы между элементами */
+    width: 100%; /* Адаптация к ширине экрана */
+    max-width: 800px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    justify-content: flex-start; /* Все элементы в строку */
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+#toolbar {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 760px;
+}
+
+#toolbar .d-flex {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-shrink: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.buttonPanel {
+    display: flex;
+}
+
+.toolbar-speed-control {
+    flex-direction: column;
+}
+
+#previous:hover img {
+    transform: scale(1.1);
+}
+
+#toggleStartStop {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#next {}
+
+#previous {}
+
+
+#toggleStartStop img {
+    width: 25px;
+    height: 25px;
+}
+
+#toggleStartStop:hover img {
+    transform: scale(1.1);
+}
+
+#next img {
+    width: 25px;
+    height: 25px;
+}
+
+#next:hover img {
+    transform: scale(1.1);
+}
+
+/* Стили для диапазона (range input) */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 96%;
+    height: 10px;
+    margin: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff;
+    cursor: pointer;
+}
+
+/* Ползунок */
+#speed {
+    max-width: 500px;
+    transform: translateY(7px);
+}
+
+/* Иконка скорости, текущая скорость и текст */
+.toolbar-speed-control img {
+    max-width: 760px;
+    margin-right: 0;
+    margin-left: 10px;
+    transform: translateY(-7px);
+}
+
+#speedDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1px 0;
+}
+
+label[for="speed"] {
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+}
+
+label[for="complexity"] {
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+
+}
+
+strong[id='levelCur'] {
+    margin-left: 15px;
+}
+
+ul.errorlist {
+    color: red;
+    list-style: none; /* Убирает маркеры списка */
+    margin: 0;
+    padding: 0;
+    font-size: 30px; /* Размер текста */
+}
+
+#wordCur {
+    padding: 5px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.regButton {
+    margin-top: 20px;
+    text-align: center; /* Центрируем кнопку под тренажером */
+}
+
+#modalContainer {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+    gap: 10px;
+}

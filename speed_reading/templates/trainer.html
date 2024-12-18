@@ -5,76 +5,178 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Тренажер для скорочтения</title>
-    <link href="{% static 'all.css' %}" rel="stylesheet" />
+    <link href="{% static 'style.css' %}" rel="stylesheet"/>
+    <script>
+        const levelsData = JSON.parse('{{ levels_json|escapejs }}');
+        const levelsCount = Object.keys(levelsData).length;
+    </script>
     <link rel="icon" href="{% static 'img/favicon_2.png' %}" type="image/x-icon">
 </head>
-<body>
+<body style="margin-top: 50px">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
                 <h1>Тренажер для скорочтения</h1>
-
-                <p>Этот тренажер позволяет повысить технику чтения...</p>
-
+                <p>Данный тренажер помогает улучшить навыки чтения, переходя от слогового к чтению целыми словами.
+                    Это достигается благодаря необходимости за ограниченное время произносить слова разной длины.
+                    Дополнительно вы можете выполнять действия, такие как хлопки, стуки или топот, совмещая тренировку
+                    чтения с физической активностью.</p>
                 <h3>Настройки тренажера</h3>
                 <div class="accordion" id="accordion">
                     <!-- Уровень сложности -->
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button">
                                 Уровень сложности
+                                <img class="accordion-icon" src="{% static 'img/down.png' %}" alt="Галочка вниз"/>
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                             data-bs-parent="#accordion">
+                        <div class="accordion-collapse collapse">
                             <div class="accordion-body">
-                                <label for="complexity">Выберите уровень сложности:</label>
-                                <input type="range" class="form-range" id="complexity" min="1" max="2" step="1"
+                                <label for="complexity">Вы можете выбрать любой уровень сложности подходящий для вас</label>
+                                <p style="margin: 0px; padding-top: 5px; margin-inline-start: 11px; font-size: 15px;">
+                                    Количество уровней: {{ levels_count }}</p>
+                                <input type="range" class="form-range" id="complexity" min="1"
+                                       max="{{ levels_count }}" step="1"
                                        value="1" oninput="updateLevel(this.value)">
-                                <strong><output id="levelDisplay">1</output>&nbsp;уровень сложности</strong>
+                                <strong id="levelCur">
+                                    <output id="levelDisplay">1</output>
+                                    &nbsp;уровень сложности
+                                </strong>
                             </div>
                         </div>
                     </div>
                     <!-- Порядок слов -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button class="accordion-button" type="button">
                                 Порядок слов
+                                <img class="accordion-icon" src="{% static 'img/down.png' %}" width="25px" height="25px"
+                                     alt="Галочка вниз"/>
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#accordion">
+                        <div class="accordion-collapse collapse">
                             <div class="accordion-body">
+                                <p style="margin: 0px; margin-bottom: 10px; margin-inline-start: 4px; font-size: 16px;">
+                                    Выберите, как будут появляться буквы, слоги или слова: последовательно или в
+                                    случайном порядке. Вы также можете перетащить ползунок на нужное место и начать с него.
+                                </p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="random" id="random">
                                     <label class="form-check-label" for="random">Случайно</label>
+                                    <div id="wordCur">
+                                        На экране буква, слог или слово №  <output id="wordDisplay">0</output>
+                                    </div>
+                                    <input type="range" class="form-range" id="position" min="0" value="0"
+                                       max="{{ first_level_length }}" step="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Блок дополнительно -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button" type="button">
+                                Дополнительно
+                                <img class="accordion-icon" src="{% static 'img/down.png' %}" width="25px" height="25px"
+                                     alt="Галочка вниз"/>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p style="margin: 0px; margin-bottom: 10px; margin-inline-start: 4px; font-size: 16px;">
+                                    Выберите нужный вам формат отображения слов
+                                </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="title">
+                                    <label class="form-check-label" for="title">Заголовок</label>
+                                    <input style="margin-left: 30px;" class="form-check-input" type="checkbox" id="small">
+                                    <label class="form-check-label" for="small">строчные</label>
+                                    <input style="margin-left: 30px;" class="form-check-input" type="checkbox" id="big">
+                                    <label class="form-check-label" for="big">ЗАГЛАВНЫЕ</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <!-- Измерь скорость чтения -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFourth">
+                        <button class="accordion-button" type="button">
+                            Cкорость чтения
+                            <img class="accordion-icon" src="{% static 'img/down.png' %}" width="25px" height="25px"
+                                 alt="Галочка вниз"/>
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p style="margin: 0px; margin-bottom: 10px; margin-inline-start: 4px; font-size: 16px;">
+                                Поставив галочку вы можете измерить скорость чтения
+                            </p>
+                            <div class="form-check" style="margin-bottom: 10px;">
+                                <input class="form-check-input" type="checkbox" id="readingSpeed">
+                                <label class="form-check-label" for="readingSpeed">Измерить скорость чтения 1 мин</label>
+                            </div>
+                            <label for="textSelection" style="margin-left: 10px;">Выберите текст:</label>
+                            <select id="textSelection" class="form-select">
+                                <!-- Опции будут загружаться через JS -->
+                            </select>
+                            <label for="maskSelection" style="margin-left: 10px;">Выберите маску:</label>
+                            <select id="maskSelection" class="form-select">
+                                <option value="choice" style="display: none;">---</option>
+                                <option value="lava">Лава</option>
+                                <option value="lavina">Лавина</option>
+                                <option value="tucha">Туча</option>
+                                <option value="tornado">Торнадо</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="modalContainer" style="display: none;">
+                    <p id="resultMessage"></p>
+                    <button id="doneButton">Готово</button>
+                </div>
                 <div id="display" class="d-flex justify-content-center align-items-center">
-                    <div id="word" class="text-capitalize font-PFBeau">...</div>
+                    <div id="word" class="text-capitalize font-PFBeau">
+                        ...
+                    </div>
                 </div>
 
-                <div class="container" id="toolbar">
-                    <div class="d-flex justify-content-between">
-                        <button id="start">Старт</button>
-                        <button id="stop">Стоп</button>
-                        <button id="next">Следующее</button>
-                        <input type="range" id="speed" min="250" max="5000" step="250" value="1000"
-                               oninput="updateSpeedDisplay(this.value)">
-                        <span id="speedDisplay">1.0</span> сек
-                        <label for="speed">Скорость (мс)</label>
+                <div class="speedButton" id="toolbar">
+                    <div class="d-flex">
+                        <div class="buttonPanel">
+                            <button id="previous">
+                                <img id="prevIcon" src="/static/img/prev.png" width="25px" height="25px" alt="Предыдущий"/>
+                            </button>
+                            <button id="toggleStartStop">
+                                <img id="toggleIcon" src="/static/img/play.png" width="25px" height="25px" alt="Старт"/>
+                            </button>
+                            <button id="next">
+                                <img id="nextJs" src="/static/img/next.png" width="25px" height="25px" alt="Следующий"/>
+                            </button>
+                        </div>
+                        <!-- Ползунок скорости -->
+                        <div class="d-flex flex-column toolbar-speed-control">
+                            <input type="range" id="speed" min="10" max="4000" step="10" value="1000"
+                                oninput="updateSpeedDisplay(this.value)">
+                            <div class="d-flex flex-column align-items-left mt-2">
+                                <label>
+                                    <img id="speedCss" src="/static/img/speed.png" width="33px" height="33px"
+                                         alt="Скорость"/>
+                                </label>
+                                <span id="speedDisplay">1.0</span>
+                                <label for="speed">Скорость (сек)</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="{% static 'all.js' %}"></script>
+    <div class="regButton">
+        <button onclick="window.location.href='/register/'">Перейти на страницу для регистрации</button>
+        <button onclick="window.location.href='/login/'">Войти</button>
+    </div>
     <script src="{% static 'interactive.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Вход в мир быстрого чтения</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form_log.as_p }}
+        <button onclick="history.back()">Назад</button>
+        <button type="submit">Войти</button>
+    </form>
+
+{% endblock %}

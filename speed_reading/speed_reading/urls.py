@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from reading_trainer.views import register, trainer, trainer_1, trainer_2
+from reading_trainer.views import register, trainer, user_login, get_texts, save_reading_speed, get_text_by_id
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', register),
-    path('trainer/', trainer),
-    path('trainer_1/', trainer_1),
-    path('trainer_2/', trainer_2)
+    path('register/', register, name='register'),
+    path('trainer/', trainer, name='trainer'),
+    path('login/', user_login, name='login'),
+    path('api/texts/', get_texts, name='get_texts'),
+    path('api/save_reading_speed/', save_reading_speed, name='save_reading_speed'),
+    path('api/texts/<int:text_id>/', get_text_by_id, name='get_text_by_id'),
 ]
